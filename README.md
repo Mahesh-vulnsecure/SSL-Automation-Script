@@ -25,7 +25,7 @@ Ensure your server meets the following conditions:
 ## 💅 Installation & Usage
 ### 🔹 **Clone this repository**
 ```bash
-git clone https://github.com/your-username/certbot-apache-ssl.git
+git clone https://github.com/Mahesh-vulnsecure/SSL-Automation-Script.git
 cd certbot-apache-ssl
 ```
 ### 🔹 **Make the script executable**
