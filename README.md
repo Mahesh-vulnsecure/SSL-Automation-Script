@@ -27,3 +27,44 @@ Ensure your server meets the following conditions:
 ```bash
 git clone https://github.com/your-username/certbot-apache-ssl.git
 cd certbot-apache-ssl
+
+---
+
+### 🔹 **Make the script executable**
+```bash
+chmod +x certbot-apache.sh
+
+---
+
+### 🔹 **Run the script**
+```bash
+sudo ./certbot-apache.sh
+
+---
+
+### 🔹 **Follow the prompts**
+- **Enter your domain name** (e.g., example.com).
+- **Enter your email address** for SSL notifications.
+- The script will handle installation, certificate issuance, and renewal setup.
+
+---
+
+###⚙️ **How It Works**
+### **Step 1: Installing Required Packages**
+- Checks if **Apache** is installed. If not, installs and starts it.
+- Checks if **Certbot** is installed. If not, installs it.
+- Ensures **Apache is running** before proceeding.
+
+### **Step 2: Obtaining SSL Certificate***
+- Uses Certbot to request an SSL certificate for the given domain.
+- Configures automatic HTTP to HTTPS redirection.
+- Logs certificate details in /var/log/certbot-automation.log.
+
+### **Step 3: Setting Up Auto-Renewal**
+- Adds a cron job (/etc/cron.d/certbot-auto-renew) to renew SSL certificates automatically.
+- The cron job runs daily at 3 AM and logs outputs.
+
+### **Step 4: Restarting Apache**
+- After installation and renewal, Apache is restarted to apply changes.
+
+---
